@@ -1,0 +1,67 @@
+<router-outlet></router-outlet>
+<div class="container-fluid">
+  <!-- Page Wrapper -->
+  <div id="content-wrapper" class="col-12 px-0 editprofile customers">
+    <div class="d-flex pl-4 h-100">
+      <!-- Content Row -->
+      <div class="row col-12 px-0 m-0">
+        <!--Profile  Card Example -->
+         <div class="col-2 pl-0 h-100 wd">
+          <div class="card">
+            <div class="card-body">
+              <button type="submit" data-backdrop="static" data-keyboard="false" (click)="addCustomer()" class="btn btn-primary creat-button mr-0 mb-2"> Add Customer</button>
+            </div>
+          </div>
+        </div>
+
+       
+          
+
+            <div class="row col-12 mx-0 px-0 mb-3">
+              <ejs-grid [dataSource]="Customerdata.customers"  [enableHover]="false"  [allowPaging]="recordCount"
+                [pageSettings]="pageSettings"  [searchSettings]="searchOptions"  [enableHeaderFocus]="true" [filterSettings]="filterSettings"
+                rowHeight="40" [allowSorting]="true" height="800px" [toolbar]='toolbarOptions'
+                 [allowSelection]="true" [allowResizing]="true"
+                 [allowFiltering]='true'
+                 (rowDataBound)="rowDataBound($event)">
+                <e-columns>
+                  <e-column field="name"  headerText="Name"
+                    [filter]="filter"  clipMode="EllipsisWithTooltip" width="12%">
+                    <ng-template let-data #template>
+                      <div class="cdata"  >
+                        <a href="javascript:void(0);"  role="tab" (click)="getid(data)">{{ data.name
+                          }}</a>
+                      </div>
+                    </ng-template>
+                  </e-column>
+                 
+                <e-column field="zipCode" headerText="Lastname"  [filter]="filter" width="11%"
+                textAlign="center" clipMode="EllipsisWithTooltip">
+                </e-column>
+                  <e-column field="billingContact" minWidth= 100  maxWidth=200 headerText="Contact" [filter]="filter"
+                    clipMode="EllipsisWithTooltip" width="12%" textAlign="center">
+                  </e-column>
+                  <e-column field="email" minWidth= 100  maxWidth=200 headerText="Email" [filter]="filter" width="10%"
+                    textAlign="center" clipMode="EllipsisWithTooltip">
+                  </e-column>
+                 
+                  <e-column headerText="action"  minWidth= 100  maxWidth=200  width="10%">
+                    <ng-template let-data #template>
+                      <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle hdot" type="button"
+                          id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                          aria-expanded="false"></button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                          <a  class="dropdown-item" (click)="editCustomer(data.id)">edit</a>
+                          <a class="dropdown-item" (click)="delCustomer(data.id)">delete</a>
+                        </div>
+                      </div>
+                    </ng-template>
+                  </e-column>
+                </e-columns>
+              </ejs-grid>
+            </div>
+          
+
+
+       

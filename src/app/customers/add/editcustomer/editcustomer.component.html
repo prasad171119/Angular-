@@ -1,0 +1,79 @@
+<div class="container-fluid">
+  <div id="content-wrapper" class="col-12 px-0 editprofile">
+    <div class="d-flex pl-4 h-100">
+      <form [formGroup]="Form" (ngSubmit)="onSubmit()">
+        <div class="card">
+         
+          <div class="card-body text-left">
+            <div class="row col-10 px-0 mx-auto py-3">
+              <div class="row col-12 mx-0 px-0 border-bottom">
+               
+                <div class="col-6">
+                  <div class="form-group row mx-0">
+                    <label for="colFormLabelSm" class="col-form-label
+                      col-form-label-sm">
+                      Name
+                      <span class="mandate">*</span>
+                    </label>
+                    <div class="col-12 px-0">
+                      <input type="text" formControlName="name" 
+                        class="form-control form-control-sm mb-0" placeholder="Enter  Name"
+                         [attr.disabled]="isEnabled? '' : null" [ngModel]="data.name"/>
+                    </div>
+                    <div *ngIf="submitted && f.name.errors" class="help-block
+                      alert-danger" role="alert">
+                      <div *ngIf="f.name.errors.required">
+                       CustomerNameRequired
+                      </div>
+                    
+                    </div>
+                  </div></div>
+</div>
+
+
+<div class="col-12 d-flex px-0">
+  <div class="col-6">
+      <div class="form-group row mx-0">
+          <label for="colFormLabelSm" class="col-form-label
+              col-form-label-sm">
+              Last name
+          </label>
+          <div class="col-12 px-0">
+              <input type="text" formControlName="  Last name" [ngModel]="data.Lastname"
+                  class="form-control form-control-sm mb-0" placeholder="Enter   Last name Name" />
+          </div>
+      </div>
+    
+  </div>
+</div>
+
+
+
+  
+<div class="row col-12 mx-0 px-0">
+ 
+  <div class="col-6">  
+    <div class="form-group row mx-0">
+      <label for="colFormLabelSm3" class="col-form-label col-form-label-sm">
+       email
+      </label>
+      <div class="col-12 px-0">
+        <input type="text" formControlName="email" [(ngModel)]="email"
+        class="form-control form-control-sm mb-0" [attr.disabled]="isEnabled? '' : null" placeholder="Enter email" />
+      </div>
+    </div></div>
+ </div>
+  
+
+    
+
+
+   
+    
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

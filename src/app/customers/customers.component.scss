@@ -1,0 +1,28 @@
+.tab-content > .active {
+    display: contents;
+  }
+ #accordion {
+   height: calc(70vh - 86px);
+   overflow-y: auto;
+   padding-right: 10px;
+ }
+ /* width */
+ #accordion::-webkit-scrollbar {
+  width: 8px;
+}
+/* Track */
+#accordion::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px #999494; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+#accordion::-webkit-scrollbar-thumb {
+  background: #25215e; 
+  border-radius: 10px;cursor: pointer;
+}
+
+/* Handle on hover */
+#accordion::-webkit-scrollbar-thumb:hover {
+  background: #25215e; cursor: pointer;
+}
