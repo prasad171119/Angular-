@@ -14,14 +14,16 @@ export class customerService {
     constructor(private http: HttpRequestHandler) { }
     
       addcustomer(data: any): Observable<any> {
-        return this.http.post<any>(this.baseApiUrl + 'api/addcustomer', data);
+        return this.http.post<any>(this.baseApiUrl + 'api/createcontact', data);
       }
     
       getcustomerdetails(): Observable<any> {
-        return this.http.get<any>(this.baseApiUrl + 'api/getcustomerbyid/');
+        return this.http.get<any>(this.baseApiUrl + 'api/getallcontacts/');
       }
     
-      
+     getcustomerdetailsbyid(id): Observable<any> {
+        return this.http.get<any>(this.baseApiUrl + 'api/getallcontactsbyid/',id);
+      }  
 
         
 
